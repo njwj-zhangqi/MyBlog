@@ -1,0 +1,10 @@
+.first-entry {
+  justify-content: flex-start;
+  min-height: 10px;
+}
+.post-entry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
