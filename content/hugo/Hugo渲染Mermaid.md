@@ -3,6 +3,7 @@ title: 'Hugo渲染Mermaid'
 date: 2024-06-28T15:18:17+08:00
 draft: true
 categories: "Hugo系列"
+slug: hugo-mermaid
 ---
 
 ## Mermaid渲染支持
@@ -38,10 +39,8 @@ window.onload = () => {
 
 渲染结果：
 ```mermaid
-graph TD;
+graph LR;
     A-->B;
-    A-->C;
-    B-->D;
+    B-->C;
     C-->D;
-
 ```
