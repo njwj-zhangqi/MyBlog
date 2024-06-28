@@ -15,7 +15,7 @@
     /* 添加其他字体格式，如woff2 */
 }
 
-body {
+body,code {
     /* 原版 */
     font-family: "LXGW WenKai", sans-serif;
     /* 屏幕优化版 */
