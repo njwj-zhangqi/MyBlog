@@ -7,6 +7,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: calc(var(--gap) / 2);
+  padding: calc(var(--gap) / 2);
 }
 /* 导入字体 */
 @font-face {

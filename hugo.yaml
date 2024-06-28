@@ -1,6 +1,6 @@
 baseURL: "https://zquee.top/"
 title: ExampleSite
-paginate: 5
+paginate: 15
 theme: PaperMod
 
 enableRobotsTXT: true

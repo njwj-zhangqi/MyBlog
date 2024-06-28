@@ -6,4 +6,4 @@ slug: hugo-used-config
 ---
 
 ## 置顶博客
-设置weight属性，默认值为0。
+设置weight属性，默认值为0, 设置成负数即可置顶
