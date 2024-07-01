@@ -1,6 +1,6 @@
 baseURL: "https://zquee.top/"
 title: ExampleSite
-paginate: 15
+paginate: 3
 theme: PaperMod
 
 enableRobotsTXT: true
@@ -121,9 +121,9 @@ menu:
       name: tags
       url: /tags/
       weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
+    - identifier: java
+      name: Java
+      url: /java/
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
