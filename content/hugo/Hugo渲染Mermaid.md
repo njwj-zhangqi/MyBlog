@@ -2,7 +2,7 @@
 title: 'Hugo渲染Mermaid'
 date: 2024-06-28T15:18:17+08:00
 draft: true
-categories: "Hugo系列"
+categories: "Hugo"
 slug: hugo-mermaid
 ---
 
