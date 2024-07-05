@@ -30,3 +30,23 @@ body,code {
     /* 屏幕优化版 */
     font-family: "LXGW WenKai Screen", sans-serif;
 }
+
+/* 中等屏幕 */
+@media (min-width: 1200px) and (max-width: 2000px) {
+:root {
+    --gap: 20px; /* 修改为更大的间距 */
+    --main-width: 100%
+  }
+
+  .main {
+     margin-left: var(--gap);
+     margin-right: var(--gap);
+  }
+}
+
+/* 大屏幕 */
+@media (min-width: 2000px) {
+:root {
+    --main-width: 70%
+  }
+}
