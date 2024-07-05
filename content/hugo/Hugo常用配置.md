@@ -2,7 +2,7 @@
 title: 'Hugo常用配置'
 date: 2024-06-28T17:23:14+08:00
 draft: true
-slug: hugo-used-config
+slug: Hugo常用配置
 ---
 
 ## 置顶博客

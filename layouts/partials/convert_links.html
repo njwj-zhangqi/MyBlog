@@ -1,0 +1,6 @@
+<!-- 文件路径：partials/convert_links.html -->
+
+{{- $pattern := `\[\[(.*?)\|(.*?)\]\]` -}}
+{{- $linkPattern := `<a href="/$1">$2</a>` -}}
+{{- $content := . | replaceRE $pattern $linkPattern | safeHTML -}}
+{{- $content -}}
