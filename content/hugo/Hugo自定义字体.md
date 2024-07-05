@@ -3,6 +3,7 @@ title: Hugo自定义字体
 date: 2024-06-28T16:24:01+08:00
 draft: true
 slug: Hugo自定义字体
+categories: Hugo
 ---
 
 参考链接：[在站点网页中使用霞鹜文楷（LXGW WenKai）](https://hsiaofeng.com/archives/224.html)

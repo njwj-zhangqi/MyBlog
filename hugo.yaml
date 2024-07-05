@@ -73,8 +73,8 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+    Title: "你好 \U0001F44B"
+    Content: 欢迎来到我的博客，分享有价值的文章
 
   # socialIcons:
   #   - name: x
@@ -116,11 +116,11 @@ params:
 menu:
   main:
     - identifier: categories
-      name: categories
+      name: 分类
       url: /categories/
       weight: 10
     - identifier: tags
-      name: tags
+      name: 标签
       url: /tags/
       weight: 20
     - identifier: java
