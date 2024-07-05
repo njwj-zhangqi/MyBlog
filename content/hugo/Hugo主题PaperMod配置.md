@@ -1,8 +1,8 @@
 ---
-title: 'Hugo PaperMod配置'
+title: Hugo主题PaperMod配置
 date: 2024-06-28T16:16:40+08:00
 draft: true
-slug: hugo-papermod-config
+slug: Hugo主题PaperMod配置
 ---
 
 ```yaml

@@ -1,8 +1,8 @@
 ---
-title: 'Hugo自定义字体'
+title: Hugo自定义字体
 date: 2024-06-28T16:24:01+08:00
 draft: true
-slug: hugo-fonts
+slug: Hugo自定义字体
 ---
 
 参考链接：[在站点网页中使用霞鹜文楷（LXGW WenKai）](https://hsiaofeng.com/archives/224.html)
@@ -10,7 +10,7 @@ slug: hugo-fonts
 ## 引入字体样式文件
 在`<head>`标签内引入字体CSS。
 
-参考配置Mermaid时引入的JS文件，在`/layouts/partials/extend_head.html`第一行添加内容：
+参考[[hugo/Hugo渲染Mermaid|Hugo渲染Mermaid]]引入的JS文件，在`/layouts/partials/extend_head.html`第一行添加内容：
 ```html
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-webfont/1.6.0/style.min.css" />
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" />

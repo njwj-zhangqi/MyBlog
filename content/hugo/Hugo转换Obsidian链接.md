@@ -1,9 +1,9 @@
 ---
-title: 'Hugo转换Obsidian链接'
+title: Hugo转换Obsidian链接
 date: 2024-07-05T10:34:07+08:00
 draft: true
 categories: Hugo
-slug: 
+slug: Hugo转换Obsidian链接
 ---
 
 ## 配置Obsidian

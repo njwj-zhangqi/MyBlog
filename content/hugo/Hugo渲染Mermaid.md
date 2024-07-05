@@ -1,9 +1,9 @@
 ---
-title: 'Hugo渲染Mermaid'
+title: Hugo渲染Mermaid
 date: 2024-06-28T15:18:17+08:00
 draft: true
-categories: "Hugo"
-slug: hugo-mermaid
+categories: Hugo
+slug: Hugo渲染Mermaid
 ---
 
 ## Mermaid渲染支持
