@@ -39,3 +39,17 @@ menu:
 ```
 保证identifier唯一，name可以自定义。此时右上角的导航栏变成中文，但是内容页面仍然是英文的Categories
 
+## 修改页面的英文Categories
+页面逻辑在`/themes/PaperMod/layouts/_default/terms.html`中
+### 修改Categories成分类
+新建`/content/categories/_index.md`
+```yaml
+title: '分类'
+description: 这是分类的描述
+```
+### 修改Tags成标签
+新建`/content/tags/_index.md`
+```yaml
+title: '标签'
+description: 这是标签的描述
+```
