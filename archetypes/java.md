@@ -1,7 +1,7 @@
 ---
-title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+title: '{{ .File.ContentBaseName}}'
 date: {{ .Date }}
 draft: true
 categories: Java
-slug: '{{ .File.ContentBaseName | replace "-" " " | lower | urlize }}'
+slug: '{{ .File.ContentBaseName | urlize }}'
 ---

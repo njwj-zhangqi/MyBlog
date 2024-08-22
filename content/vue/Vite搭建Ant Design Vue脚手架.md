@@ -2,7 +2,7 @@
 title: 'Vite搭建Ant Design Vue脚手架'
 date: 2024-07-02T10:36:45+08:00
 draft: true
-categories: Java
+categories: Vue
 slug: Vite搭建Ant Design Vue脚手架
 ---
 

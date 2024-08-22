@@ -1,7 +1,7 @@
 ---
-title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+title: '{{ .File.ContentBaseName}}'
 date: {{ .Date }}
 draft: true
 categories: 待办事项
-slug: '{{ .File.ContentBaseName }}'
+slug: '{{ .File.ContentBaseName | urlize }}'
 ---
