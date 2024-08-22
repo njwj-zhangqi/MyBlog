@@ -1,6 +1,6 @@
 ---
 title: Hugo转换Obsidian链接
-date: 2024-07-05T10:34:07+08:00
+date: 2024-06-28T16:16:40+08:00
 draft: true
 categories: Hugo
 slug: Hugo转换Obsidian链接

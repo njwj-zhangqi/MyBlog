@@ -3,5 +3,5 @@ title: '{{ .File.ContentBaseName}}'
 date: {{ .Date }}
 draft: true
 categories: 
-slug: '{{ .File.ContentBaseName | urlize }}'
+slug: '{{replace .File.ContentBaseName " " "-" }}'
 ---
