@@ -36,12 +36,14 @@
 
 {{- if .Content }}
 <div class="post-content">
+  {{- $processedContent := .Content }}
   {{- if not (.Param "disableAnchoredHeadings") }}
-    {{- partial "anchored_headings.html" .Content }}
+    {{- $processedContent := partial "anchored_headings.html" }}
   {{- end }}
-  {{- partial "convert_links.html" .Content | safeHTML }}
+  {{- $processedContent | partial "convert_links.html" | safeHTML }}
 </div>
 {{- end }}
+
 
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}

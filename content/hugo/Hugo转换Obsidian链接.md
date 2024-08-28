@@ -6,8 +6,6 @@ categories: Hugo
 slug: Hugo转换Obsidian链接
 ---
 
-注意：由于编译问题，代码中的`Content`请使用`.Content`替换
-
 ## 配置 Obsidian
 
 将 Obsidian 的仓库，设置为 Hugo 的`/content`文件夹
@@ -51,10 +49,11 @@ Tips: 如果安装了主题，请不要在主题中修改源文件，在自己�
 ```go
 {{- if .Content }}
 <div class="post-content">
+  {{- $processedContent := .Content }}
   {{- if not (.Param "disableAnchoredHeadings") }}
-    {{- partial "anchored_headings.html" .Content }}
+    {{- $processedContent := partial "anchored_headings.html" }}
   {{- end }}
-  {{- partial "convert_links.html" .Content | safeHTML }}
+  {{- $processedContent | partial "convert_links.html" | safeHTML }}
 </div>
 {{- end }}
 ```
