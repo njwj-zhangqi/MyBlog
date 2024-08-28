@@ -3,7 +3,7 @@ title: 'Vue项目脚手架搭建'
 date: 2024-07-02T10:29:47+08:00
 draft: true
 categories: Vue
-slug: vue-create-project
+slug: Vue项目脚手架搭建
 ---
 
 ## 安装Vue CLI

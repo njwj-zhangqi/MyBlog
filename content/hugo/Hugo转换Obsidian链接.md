@@ -18,13 +18,12 @@ slug: Hugo转换Obsidian链接
 
 在`/layouts/partials`下添加`convert_links.html`文件，内容如下：
 
-```html
+```go
 <!-- 文件路径：partials/convert_links.html -->
 
-{{- $pattern := `\[\[(.*?)\|(.*?)\]\]` -}} {{- $linkPattern := `<a href="/$1"
-  >$2</a
->` -}} {{- $content := . | replaceRE $pattern $linkPattern | safeHTML -}} {{-
-$content -}}
+{{- $pattern := `\[\[(.*?)\|(.*?)\]\]` -}} {{- $linkPattern := `<a href="/$1">$2</a>` -}} 
+{{- $content := . | replaceRE $pattern $linkPattern | safeHTML -}}
+ {{-$content -}}
 ```
 
 ## 修改 single.html 文件
@@ -37,23 +36,25 @@ Tips: 如果安装了主题，请不要在主题中修改源文件，在自己�
 
 替换代码
 
-```html
-{{- if Content }}
+```go
+{{- if .Content }}
 <div class="post-content">
-  {{- if not (.Param "disableAnchoredHeadings") }} {{- partial
-  "anchored_headings.html" Content -}} {{- else }}{{ Content }}{{ end }}
+  {{- if not (.Param "disableAnchoredHeadings") }}
+  {{- partial "anchored_headings.html" .Content -}}
+  {{- else }}{{ .Content }}{{ end }}
 </div>
 {{- end }}
 ```
 
 变成
 
-```html
-{{- if Content }}
+```go
+{{- if .Content }}
 <div class="post-content">
-  {{- if not (.Param "disableAnchoredHeadings") }} {{- partial
-  "anchored_headings.html" -}} {{- end }} {{- partial "convert_links.html"
-  Content | safeHTML }}
+  {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content }}
+  {{- end }}
+  {{- partial "convert_links.html" .Content | safeHTML }}
 </div>
 {{- end }}
 ```

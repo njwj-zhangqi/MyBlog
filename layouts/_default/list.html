@@ -33,15 +33,16 @@
 {{- if .Content }}
 <div class="post-content">
   {{- if not (.Param "disableAnchoredHeadings") }}
-  {{- partial "anchored_headings.html" .Content -}}
-  {{- else }}{{ .Content }}{{ end }}
+    {{- partial "anchored_headings.html" .Content }}
+  {{- end }}
+  {{- partial "convert_links.html" .Content | safeHTML }}
 </div>
 {{- end }}
 
 {{- $pages := union .RegularPages .Sections }}
 
 {{- if .IsHome }}
-{{- $pages =  site.RegularPages}}
+{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true"  }}
 {{- end }}
 
