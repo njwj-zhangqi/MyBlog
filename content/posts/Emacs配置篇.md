@@ -1,48 +1,62 @@
 ---
 title: "Emacs配置篇"
-lastmod: 2024-08-29T17:45:17+08:00
+lastmod: 2024-08-30T11:31:53+08:00
 categories: ["Emacs"]
 draft: true
 ---
 
 ## 前言 {#前言}
 
-前提：Windows下的Emacs的默认配置，放在 `C:\Users\{UserName}\AppData\Roaming\.emacs.d` 目录下，以下操作都基于此目录，用 `~` 表示
+前提：Windows下的Emacs配置，默认放在 `C:\Users\{User}\AppData\Roaming\.emacs.d`
+AppData是隐藏目录，需要在 “查看”中勾选“隐藏的项目”来打开。
+
+
+### Windows设置home环境变量 {#windows设置home环境变量}
+
+为了保持Linux、Windows、Mac OS下配置文件的统一，需要在Windows下设置 `home` 环境变量，变量值为 `C:\Users\{User}`
+
+以下配置都将以 `C:\Users\{User}\.emacs.d` 作为最终配置文件夹，请务必检查。
 
 如果没有新建过 `~/init.el` 文件，默认是不存在的。新建txt文档，改成 `init.el` ，使用Emacs打开。
+注意： `init.el` 与 `.emacs` 是冲突的，如果在 `home` 下存在 `.emcas` 文件，请删除。
 
 
 ## 插件配置 {#插件配置}
 
-使用清华大学的镜像源：
+由于Emacs插件的下载地址都在国外，下载速度很慢，因此首先替换插件下载源，将以下代码放在 `init.el` 最上面。
 
 ```emacs-lisp
-;; 设置插件管理器源
-     (require 'package)
-     (package-initialize)
-
-     (setq package-archives '(("gnu"    . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                              ("nongnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
-                              ("melpa"  . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/"))
-  ;; 使用use-package
+  ;; 设置插件管理器源
+  ;使用清华大学的镜像源
+  (require 'package)
+  (package-initialize)
+  (setq package-archives '(("gnu"    . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                           ("nongnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+                           ("melpa"  . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/"))
+      ;; 使用use-package
 (unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+     (package-refresh-contents)
+     (package-install 'use-package))
 (eval-when-compile
-  (require 'use-package))
-
+      (require 'use-package))
 ```
 
 
 ## 文件格式配置 {#文件格式配置}
 
-这是注释
-
 ```emacs-lisp
-;; 设置文件编码规则
-(setq default-buffer-file-coding-system 'utf-8-unix)
-;; 设置org文件导出编码格式
-(setq org-export-coding-system 'utf-8)
+
+  ;; 设置文件编码规则
+  (setq default-buffer-file-coding-system 'utf-8-unix)
+  ;; 设置org文件导出编码格式
+  (setq org-export-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(setq buffer-file-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
+
 ```
 
 
@@ -62,4 +76,21 @@ draft: true
 ;(setq org-hugo-export-with-section-numbers nil) ; 是否导出带有章节编号的文件
 (use-package ox-hugo
   :ensure t)  ; 确保ox-hugo包已安装
+```
+
+
+## 模块化配置 {#模块化配置}
+
+在 `init.el` 文件中只需要引入其他配置文件，将具体的配置分别放在各自的文件中。
+
+创建一个 `~/lisp/hello.el` 文件，代码如下：
+
+```emacs-lisp
+;; 定义一个hello-world函数
+(defun hello-world())
+(interactive)
+(message "Hello, Emacs"))
+
+;; 导出本模块
+(provide 'hello)
 ```
