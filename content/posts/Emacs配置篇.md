@@ -1,7 +1,7 @@
 ---
 title: "Emacs配置篇"
-lastmod: 2024-08-30T11:31:53+08:00
-categories: ["Emacs"]
+date: 2024-09-11T14:35:00+08:00
+lastmod: 2024-09-19T09:22:57+08:00
 draft: true
 ---
 
@@ -93,4 +93,23 @@ AppData是隐藏目录，需要在 “查看”中勾选“隐藏的项目”来
 
 ;; 导出本模块
 (provide 'hello)
+```
+
+
+## 时间和文件名配置 {#时间和文件名配置}
+
+```emacs-lisp
+;; 定义一个函数来插入当前时间到文件中
+(defun now()
+  "在光标位置插入当前时间。"
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d %H:%M")))
+
+;; 定义一个函数来插入当前缓冲区的文件名到文件中
+(defun file()
+  "在光标位置插入当前缓冲区的文件名。"
+  (interactive)
+  (if (buffer-file-name)
+      (insert (file-name-sans-extension (file-name-nondirectory (buffer-file-name))))
+    (insert "<无文件名>")))
 ```
