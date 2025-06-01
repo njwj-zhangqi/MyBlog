@@ -1,5 +1,5 @@
-baseURL: "https://zquee.top/"
-title: ExampleSite
+baseURL: "https://xleft.top/"
+title: xleft
 paginate: 15
 theme: PaperMod
 defaultContentLanguage: zh
@@ -15,8 +15,8 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: ExampleSite
-  description: "ExampleSite description"
+  title: xleft
+  description: "xleft description"
   keywords: [Blog, Portfolio, PaperMod]
   author:
   # author: ["Me", "You"] # multiple authors
@@ -59,7 +59,7 @@ params:
   # profile-mode
   profileMode:
     enabled: false # needs to be explicitly set
-    title: ExampleSite
+    title: xleft
     subtitle: "This is subtitle"
     imageUrl: "<img location>"
     imageWidth: 120
